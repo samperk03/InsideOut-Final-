@@ -13,22 +13,22 @@
 
 [node name="Polygon2D" parent="Map/Wall" index="0"]
 position = Vector2(79, 33)
-polygon = PackedVector2Array(-304, -142, -294, 137, 127, 158, 129, -59, 132, -157, -188, -155, -188, -133, 106, -144, 106, 134, -268, 117, -273, -161)
+polygon = PackedVector2Array(-303, -129, -303, -97, -15, -97, -15, -1, -271, -1, -271, -33, -303, -33, -303, 31, 17, 31, 17, -129)
 
 [node name="Line2D" parent="Map/Wall" index="1"]
 position = Vector2(79, 33)
-points = PackedVector2Array(-304, -142, -294, 137, 127, 158, 129, -59, 132, -157, -188, -155, -188, -133, 106, -144, 106, 134, -268, 117, -273, -161, -304, -142)
+points = PackedVector2Array(-303, -129, -303, -97, -15, -97, -15, -1, -271, -1, -271, -33, -303, -33, -303, 31, 17, 31, 17, -129, -303, -129)
 metadata/_edit_lock_ = true
 
 [node name="Wall2" parent="Map" instance=ExtResource("1_ksefw")]
 
 [node name="Polygon2D" parent="Map/Wall2" index="0"]
 position = Vector2(419, 131)
-polygon = PackedVector2Array(-679, -307, -162, -327, -152, 96, -715, 109, -707, -6, -736, -5, -736, 120, -707, 145, -116, 130, -116, 90, -130, -337, -158, -365, -721, -337, -739, -308)
+polygon = PackedVector2Array(-739, 61, -67, 61, -67, -99, -99, -99, -99, 29, -707, 29, -707, -291, -99, -291, -99, -163, -67, -163, -67, -323, -739, -323)
 
 [node name="Line2D" parent="Map/Wall2" index="1"]
 position = Vector2(419, 131)
-points = PackedVector2Array(-679, -307, -162, -327, -152, 96, -715, 109, -707, -6, -736, -5, -736, 120, -707, 145, -116, 130, -116, 90, -130, -337, -158, -365, -721, -337, -739, -308, -679, -307)
+points = PackedVector2Array(-739, 61, -67, 61, -67, -99, -99, -99, -99, 29, -707, 29, -707, -291, -99, -291, -99, -163, -67, -163, -67, -323, -739, -323, -739, 61)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_mtj1t")]
