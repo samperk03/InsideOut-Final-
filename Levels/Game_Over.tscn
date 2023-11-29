@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbyt7s8ctxjxs"]
+
+[ext_resource type="Script" path="res://Levels/Game_Over.gd" id="1_b6p4i"]
+
+[node name="Game_Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b6p4i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 52.0
+grow_horizontal = 2
+text = "Congratulations! 
+You win!"
+
+[node name="Play_Again" type="Button" parent="."]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 300.0
+offset_right = 612.0
+offset_bottom = 340.0
+text = "Play Again!!!
+"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 360.0
+offset_right = 612.0
+offset_bottom = 400.0
+text = "Quit"
+
+[connection signal="pressed" from="Play_Again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

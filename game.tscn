@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvopj7imel2qo"]
+[gd_scene load_steps=7 format=3 uid="uid://dvopj7imel2qo"]
 
 [ext_resource type="PackedScene" uid="uid://bn802loastx2d" path="res://Assets/Objects/wall.tscn" id="1_ksefw"]
 [ext_resource type="PackedScene" uid="uid://b7i0apn6kf16y" path="res://Player/player.tscn" id="1_mtj1t"]
+[ext_resource type="Texture2D" uid="uid://datn6xcj503mj" path="res://Assets/Images/Green.jpg" id="2_0fsqk"]
+[ext_resource type="Script" path="res://Levels/Exit.gd" id="2_niubm"]
 [ext_resource type="AudioStream" uid="uid://c6pg33ils1ww0" path="res://Assets/Sounds/MainTheme.wav" id="2_nvdo6"]
 [ext_resource type="AudioStream" uid="uid://cod84jn8k80sh" path="res://Assets/Sounds/Win.wav" id="3_xkbpj"]
 
@@ -31,6 +33,18 @@ position = Vector2(419, 131)
 points = PackedVector2Array(-739, 61, -67, 61, -67, -99, -99, -99, -99, 29, -707, 29, -707, -291, -99, -291, -99, -163, -67, -163, -67, -323, -739, -323, -739, 61)
 metadata/_edit_lock_ = true
 
+[node name="Exit_to_1" type="Area2D" parent="."]
+script = ExtResource("2_niubm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Exit_to_1"]
+modulate = Color(0, 1, 0, 0.384314)
+position = Vector2(336, 0.500001)
+scale = Vector2(0.00566667, 0.0105)
+texture = ExtResource("2_0fsqk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_to_1"]
+polygon = PackedVector2Array(319, -30, 351, -30, 351, 30, 318, 30)
+
 [node name="Player" parent="." instance=ExtResource("1_mtj1t")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -43,6 +57,8 @@ autoplay = true
 [node name="Win" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_xkbpj")
 volume_db = 6.17
+
+[connection signal="body_entered" from="Exit_to_1" to="Exit_to_1" method="_on_body_entered"]
 
 [editable path="Map/Wall"]
 [editable path="Map/Wall2"]
