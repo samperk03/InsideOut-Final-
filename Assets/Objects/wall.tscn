@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn802loastx2d"]
+
+[ext_resource type="Script" path="res://Assets/Objects/Walls.gd" id="1_85r72"]
+[ext_resource type="Texture2D" uid="uid://bdpowge4ymx45" path="res://Assets/Images/line wall.png" id="2_nsa3w"]
+[ext_resource type="Texture2D" uid="uid://pc4thoviej0k" path="res://Assets/Images/wall.png" id="2_o6ans"]
+
+[node name="Wall" type="StaticBody2D"]
+script = ExtResource("1_85r72")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture_repeat = 3
+position = Vector2(155, 8)
+texture = ExtResource("2_o6ans")
+texture_scale = Vector2(2, 2)
+polygon = PackedVector2Array(256, 156, 156, 362, 413, 443, 600, 407, 591, 233, 472, 148, 243, 128)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(155, 8)
+points = PackedVector2Array(256, 156, 156, 362, 413, 443, 600, 407, 591, 233, 472, 148, 243, 128, 256, 156)
+texture = ExtResource("2_nsa3w")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 2
