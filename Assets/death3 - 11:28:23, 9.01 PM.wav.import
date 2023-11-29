@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dfy0g4iwqo3lm"
+path="res://.godot/imported/death3 - 11:28:23, 9.01 PM.wav-001c9c9a1f90e2e9a26d0e5f6638d25c.sample"
+
+[deps]
+
+source_file="res://Assets/death3 - 11:28:23, 9.01 PM.wav"
+dest_files=["res://.godot/imported/death3 - 11:28:23, 9.01 PM.wav-001c9c9a1f90e2e9a26d0e5f6638d25c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvopj7imel2qo"]
+[gd_scene load_steps=4 format=3 uid="uid://dvopj7imel2qo"]
 
 [ext_resource type="PackedScene" uid="uid://b7i0apn6kf16y" path="res://Player/player.tscn" id="1_mtj1t"]
+[ext_resource type="AudioStream" uid="uid://dut54o6du8wub" path="res://Assets/MSCH_C220-FinalProject-MainTheme - 11:28:23, 8.11 PM.wav" id="2_kjg02"]
+[ext_resource type="AudioStream" uid="uid://cmipyekb2wlkc" path="res://Assets/Death1 - 11:28:23, 8.24 PM.wav" id="3_ae7s3"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_mtj1t")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_kjg02")
+volume_db = 8.915
+autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ae7s3")
+volume_db = 3.962
