@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvopj7imel2qo"]
 
 [ext_resource type="PackedScene" uid="uid://b7i0apn6kf16y" path="res://Player/player.tscn" id="1_mtj1t"]
-[ext_resource type="AudioStream" uid="uid://dut54o6du8wub" path="res://Assets/MSCH_C220-FinalProject-MainTheme - 11:28:23, 8.11 PM.wav" id="2_kjg02"]
-[ext_resource type="AudioStream" uid="uid://dx6mx5cvgkev7" path="res://Assets/Win1 - 11:28:23, 8.46 PM.wav" id="3_sb0pk"]
+[ext_resource type="AudioStream" uid="uid://c6pg33ils1ww0" path="res://Assets/Sounds/MainTheme.wav" id="2_nvdo6"]
+[ext_resource type="AudioStream" uid="uid://cod84jn8k80sh" path="res://Assets/Sounds/Win.wav" id="3_xkbpj"]
 
 [node name="Game" type="Node2D"]
 
@@ -10,11 +10,11 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_kjg02")
+[node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_nvdo6")
 volume_db = 8.915
 autoplay = true
 
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_sb0pk")
+[node name="Win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xkbpj")
 volume_db = 6.17
