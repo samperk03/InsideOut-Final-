@@ -1,5 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ncwq3wa6d6xq"]
+[gd_scene load_steps=14 format=3 uid="uid://ncwq3wa6d6xq"]
 
+[ext_resource type="Texture2D" uid="uid://dt6nomy1o3nt5" path="res://Assets/Images/coin.png" id="1_4aql5"]
+[ext_resource type="Script" path="res://Levels/Coins.gd" id="2_1jeay"]
 [ext_resource type="Texture2D" path="res://Assets/Images/brick.png" id="2_bxgdf"]
 [ext_resource type="PackedScene" uid="uid://b7i0apn6kf16y" path="res://Player/player.tscn" id="2_dooct"]
 [ext_resource type="Texture2D" uid="uid://ct06gao5108ch" path="res://Assets/Images/tilemap.png" id="2_wkdnv"]
@@ -26,6 +28,18 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n8sb2")
 sources/1 = SubResource("TileSetAtlasSource_oc04c")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thod0"]
+texture = ExtResource("1_4aql5")
+texture_region_size = Vector2i(60, 60)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.5, -26.5, -18, -23, -20.5, -20.5, -23.5, -17.5, -27.5, -10.5, -29, -6, -30, -2, -30.5, 2.5, -31, 6.5, -29, 10.5, -26, 14.5, -21.5, 19.5, -18, 24, -13, 28, -7, 30.5, 1.5, 29.5, 7.5, 29, 16.5, 27.5, 20, 23, 26, 16, 28.5, 8, 30, -4.5, 29, -12.5, 25, -17, 20.5, -23.5, 15, -27.5, 10.5, -29.5, 3.5, -32, -2, -32, -7.5, -30)
+
+[sub_resource type="TileSet" id="TileSet_ueaft"]
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_thod0")
+
 [node name="Level1" type="Node2D"]
 
 [node name="Map" type="Node2D" parent="."]
@@ -38,6 +52,15 @@ layer_0/tile_data = PackedInt32Array(2555904, 1, 0, 2490368, 1, 0, 2424832, 1, 0
 [node name="Player" parent="." instance=ExtResource("2_dooct")]
 position = Vector2(525, 340)
 scale = Vector2(0.2, 0.2)
+
+[node name="Coins" type="TileMap" parent="."]
+light_mask = 8
+visibility_layer = 8
+scale = Vector2(0.2, 0.2)
+tile_set = SubResource("TileSet_ueaft")
+format = 2
+layer_0/tile_data = PackedInt32Array(12517727, 2, 0, 11272498, 2, 0, 9306384, 2, 0, 8126751, 2, 0, 5570838, 2, 0, 1048809, 2, 0, 459020, 2, 0, 524635, 2, 0, 655527, 2, 0, 655513, 2, 0, 983154, 2, 0, 458801, 2, 0, 524295, 2, 0, 2490392, 2, 0, 4259872, 2, 0, 3211273, 2, 0, 7798816, 2, 0, 6488073, 2, 0, 9502733, 2, 0, 10092593, 2, 0, 12451899, 2, 0, 9240638, 2, 0, 7471182, 2, 0, 4063306, 2, 0, 2097269, 2, 0, 5570680, 2, 0, 7798885, 2, 0, 10223734, 2, 0, 11600013, 2, 0, 9240728, 2, 0, 7602316, 2, 0, 4653217, 2, 0, 2687149, 2, 0, 3408078, 2, 0, 5701854, 2, 0, 8650978, 2, 0, 7471341, 2, 0, 10682604, 2, 0, 11600109, 2, 0, 11993269, 2, 0, 6422853, 2, 0, 2949428, 2, 0, 1376561, 2, 0, 2556170, 2, 0)
+script = ExtResource("2_1jeay")
 
 [node name="Exit_to_2" type="Area2D" parent="."]
 script = ExtResource("3_352qg")
