@@ -5,7 +5,7 @@ var coins = []
 
 func _ready():
 	for x in range(1000):
-		for y in range(2000):
+		for y in range(1000):
 			if get_cell_source_id(0, Vector2i(x, y)) != -1:
 				coins.append(Vector2(x,y))
 
@@ -21,3 +21,5 @@ func get_coin(p):
 			which_coin = c
 	if which_coin != Vector2.ZERO:
 		call_deferred("set_cell", 0, which_coin, -1)
+		$CoinSound.play()
+		Global.add_coin()
