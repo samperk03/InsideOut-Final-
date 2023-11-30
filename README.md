@@ -37,7 +37,7 @@ Adding particle effects
 # Created by: Group Name
 Joshua Tlung: Player Sprite, Coin Sprite, Kill Obstacle
 
-Greyson Schenck
+Greyson Schenck: Level 1, Level 2, Lost Screen, Main_Menu, Game_Over, UI
 
 Samuel Perkins 
 - Created audio effects for the game (Main_Theme) (coin_collect) (Death) (Win) 
