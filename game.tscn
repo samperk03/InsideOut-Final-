@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvopj7imel2qo"]
+[gd_scene load_steps=11 format=3 uid="uid://dvopj7imel2qo"]
 
 [ext_resource type="PackedScene" uid="uid://bn802loastx2d" path="res://Assets/Objects/wall.tscn" id="1_ksefw"]
 [ext_resource type="PackedScene" uid="uid://b7i0apn6kf16y" path="res://Player/player.tscn" id="1_mtj1t"]
@@ -8,8 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://c6pg33ils1ww0" path="res://Assets/Sounds/MainTheme.wav" id="2_nvdo6"]
 [ext_resource type="Script" path="res://Coins.gd" id="3_2qm3q"]
 [ext_resource type="AudioStream" uid="uid://cod84jn8k80sh" path="res://Assets/Sounds/Win.wav" id="3_xkbpj"]
-[ext_resource type="AudioStream" uid="uid://bdo1ayf6pe6a0" path="res://Assets/Sounds/Death.wav" id="9_1kpah"]
-[ext_resource type="AudioStream" uid="uid://b7e57yh5b2g7u" path="res://Assets/Sounds/Coin.wav" id="10_cjtkc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nkgdj"]
 texture = ExtResource("2_htpf2")
@@ -80,12 +78,6 @@ autoplay = true
 [node name="Win" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_xkbpj")
 volume_db = 6.17
-
-[node name="Death" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_1kpah")
-
-[node name="Coin" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_cjtkc")
 
 [connection signal="body_entered" from="Exit_to_1" to="Exit_to_1" method="_on_body_entered"]
 
