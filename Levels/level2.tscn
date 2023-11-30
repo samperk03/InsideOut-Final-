@@ -1,13 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmk1drtq3epf6"]
+[gd_scene load_steps=16 format=3 uid="uid://dmk1drtq3epf6"]
 
+[ext_resource type="PackedScene" uid="uid://cewchj7wqrct3" path="res://Assets/Objects/kill.tscn" id="1_qa8c5"]
 [ext_resource type="PackedScene" uid="uid://b7i0apn6kf16y" path="res://Player/player.tscn" id="1_un4uy"]
 [ext_resource type="Texture2D" uid="uid://ct06gao5108ch" path="res://Assets/Images/tilemap.png" id="2_gvlh6"]
 [ext_resource type="Script" path="res://Levels/Exit.gd" id="3_ah57l"]
 [ext_resource type="Texture2D" uid="uid://dt6nomy1o3nt5" path="res://Assets/Images/coin.png" id="3_j1jgf"]
 [ext_resource type="Script" path="res://Player/Coins.gd" id="4_vqolx"]
 [ext_resource type="Texture2D" uid="uid://cqmhfkerb71hg" path="res://Assets/Images/Red.jpg" id="4_xequr"]
+[ext_resource type="AudioStream" uid="uid://b7e57yh5b2g7u" path="res://Assets/Sounds/Coin.wav" id="5_4ao7b"]
 [ext_resource type="Texture2D" uid="uid://datn6xcj503mj" path="res://Assets/Images/Green.jpg" id="5_jcomb"]
 [ext_resource type="PackedScene" uid="uid://c4d14106rpqxu" path="res://Levels/Ui.tscn" id="6_wsa4g"]
+[ext_resource type="PackedScene" uid="uid://cwlily6i58pwp" path="res://Assets/Objects/main_theme.tscn" id="10_1drl1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66l1j"]
 texture = ExtResource("2_gvlh6")
@@ -69,9 +72,370 @@ sources/1 = SubResource("TileSetAtlasSource_sxgyq")
 
 [node name="Game" type="Node2D"]
 
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Kill" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+
+[node name="Polygon2D" parent="Obstacles/Kill" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Timer" parent="Obstacles/Kill" index="2"]
+wait_time = 0.5
+
+[node name="Kill2" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(48, -48)
+
+[node name="Polygon2D" parent="Obstacles/Kill2" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill2" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill3" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(416, 256)
+
+[node name="Polygon2D" parent="Obstacles/Kill3" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill3" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill4" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(464, 192)
+
+[node name="Polygon2D" parent="Obstacles/Kill4" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill4" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill5" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(544, 160)
+
+[node name="Polygon2D" parent="Obstacles/Kill5" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill5" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill7" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(64, 272)
+
+[node name="Polygon2D" parent="Obstacles/Kill7" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill7" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill8" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-112, 272)
+
+[node name="Polygon2D" parent="Obstacles/Kill8" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill8" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill9" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-528, 96)
+
+[node name="Polygon2D" parent="Obstacles/Kill9" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill9" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill10" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-496, 32)
+
+[node name="Polygon2D" parent="Obstacles/Kill10" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill10" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill11" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-448, 48)
+
+[node name="Polygon2D" parent="Obstacles/Kill11" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill11" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill12" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-272, 32)
+
+[node name="Polygon2D" parent="Obstacles/Kill12" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill12" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill13" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-160, -64)
+
+[node name="Polygon2D" parent="Obstacles/Kill13" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill13" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill14" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(48, 80)
+
+[node name="Polygon2D" parent="Obstacles/Kill14" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill14" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill15" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-32, 64)
+
+[node name="Polygon2D" parent="Obstacles/Kill15" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill15" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill16" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-64, 16)
+
+[node name="Polygon2D" parent="Obstacles/Kill16" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill16" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill17" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-96, 128)
+
+[node name="Polygon2D" parent="Obstacles/Kill17" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill17" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill18" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-224, 160)
+
+[node name="Polygon2D" parent="Obstacles/Kill18" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill18" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill19" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-208, 272)
+
+[node name="Polygon2D" parent="Obstacles/Kill19" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill19" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill20" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-288, 272)
+
+[node name="Polygon2D" parent="Obstacles/Kill20" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill20" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill21" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-352, 224)
+
+[node name="Polygon2D" parent="Obstacles/Kill21" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill21" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill22" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-480, 160)
+
+[node name="Polygon2D" parent="Obstacles/Kill22" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill22" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill23" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-320, -176)
+
+[node name="Polygon2D" parent="Obstacles/Kill23" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill23" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill24" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-384, -256)
+
+[node name="Polygon2D" parent="Obstacles/Kill24" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill24" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill25" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-336, -112)
+
+[node name="Polygon2D" parent="Obstacles/Kill25" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill25" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill26" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(-496, -48)
+
+[node name="Polygon2D" parent="Obstacles/Kill26" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill26" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill27" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(416, -176)
+
+[node name="Polygon2D" parent="Obstacles/Kill27" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill27" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill28" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(288, -272)
+
+[node name="Polygon2D" parent="Obstacles/Kill28" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill28" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill29" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(320, -208)
+
+[node name="Polygon2D" parent="Obstacles/Kill29" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill29" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill30" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(288, -176)
+
+[node name="Polygon2D" parent="Obstacles/Kill30" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill30" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill31" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(288, -112)
+
+[node name="Polygon2D" parent="Obstacles/Kill31" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill31" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill32" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(160, -208)
+
+[node name="Polygon2D" parent="Obstacles/Kill32" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill32" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill33" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(48, -272)
+
+[node name="Polygon2D" parent="Obstacles/Kill33" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill33" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill34" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(48, -112)
+
+[node name="Polygon2D" parent="Obstacles/Kill34" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill34" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Kill35" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(192, 96)
+
+[node name="Polygon2D" parent="Obstacles/Kill35" index="0"]
+polygon = PackedVector2Array(577.426, 133.624, 577.426, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Line2D" parent="Obstacles/Kill35" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(577.426, 133.624, 577.426, 140.305, 545.347, 140.305, 545.347, 133.624, 577.426, 133.624)
+
+[node name="Kill6" parent="Obstacles" instance=ExtResource("1_qa8c5")]
+position = Vector2(400, 320)
+
+[node name="Polygon2D" parent="Obstacles/Kill6" index="0"]
+polygon = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305)
+
+[node name="Line2D" parent="Obstacles/Kill6" index="1"]
+scale = Vector2(0.99753, 2.39479)
+points = PackedVector2Array(545.347, 133.624, 561.387, 133.624, 561.387, 140.305, 545.347, 140.305, 545.347, 133.624)
+
+[node name="Timer" parent="Obstacles/Kill6" index="2"]
+wait_time = 0.5
+
 [node name="Player" parent="." instance=ExtResource("1_un4uy")]
 position = Vector2(542, 302)
 scale = Vector2(0.2, 0.2)
+
+[node name="Camera2D" parent="Player" index="3"]
+limit_right = 1136
+limit_bottom = 656
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_o8y6k")
@@ -84,6 +448,9 @@ tile_set = SubResource("TileSet_exhlv")
 format = 2
 layer_0/tile_data = PackedInt32Array(1769549, 1, 0, 1179720, 1, 0, 458823, 1, 0, 458800, 1, 0, 524330, 1, 0, 589854, 1, 0, 524305, 1, 0, 589835, 1, 0, 1638410, 1, 0, 1376258, 1, 0, 2228232, 1, 0, 2752526, 1, 0, 2949124, 1, 0, 3014676, 1, 0, 2752544, 1, 0, 2031646, 1, 0, 1572897, 1, 0, 1048619, 1, 0, 983092, 1, 0, 393277, 1, 0, 327762, 1, 0, 524376, 1, 0, 1769556, 1, 0, 2162772, 1, 0, 2359356, 1, 0, 2818103, 1, 0, 2949170, 1, 0, 2228266, 1, 0, 1966119, 1, 0, 1703973, 1, 0, 3211337, 1, 0, 1835032, 1, 0, 2162711, 1, 0, 917518, 1, 0, 786437, 1, 0, 983124, 1, 0, 1704007, 1, 0, 1572929, 1, 0, 1900603, 1, 0, 1572921, 1, 0, 1703987, 1, 0)
 script = ExtResource("4_vqolx")
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="Coins"]
+stream = ExtResource("5_4ao7b")
 
 [node name="Exit_to_Lost" type="Area2D" parent="."]
 position = Vector2(967, 550)
@@ -124,6 +491,45 @@ polygon = PackedVector2Array(837, 662, 1065, 664, 1066, 805, 837, 804)
 
 [node name="UI" parent="." instance=ExtResource("6_wsa4g")]
 
+[node name="MainTheme" parent="." instance=ExtResource("10_1drl1")]
+
 [connection signal="body_entered" from="Exit_to_Lost" to="Exit_to_Lost" method="_on_body_entered"]
 [connection signal="body_entered" from="Exit_to_Lost2" to="Exit_to_Lost2" method="_on_body_entered"]
 [connection signal="body_entered" from="Exit_to_GO" to="Exit_to_GO" method="_on_body_entered"]
+
+[editable path="Obstacles/Kill"]
+[editable path="Obstacles/Kill2"]
+[editable path="Obstacles/Kill3"]
+[editable path="Obstacles/Kill4"]
+[editable path="Obstacles/Kill5"]
+[editable path="Obstacles/Kill7"]
+[editable path="Obstacles/Kill8"]
+[editable path="Obstacles/Kill9"]
+[editable path="Obstacles/Kill10"]
+[editable path="Obstacles/Kill11"]
+[editable path="Obstacles/Kill12"]
+[editable path="Obstacles/Kill13"]
+[editable path="Obstacles/Kill14"]
+[editable path="Obstacles/Kill15"]
+[editable path="Obstacles/Kill16"]
+[editable path="Obstacles/Kill17"]
+[editable path="Obstacles/Kill18"]
+[editable path="Obstacles/Kill19"]
+[editable path="Obstacles/Kill20"]
+[editable path="Obstacles/Kill21"]
+[editable path="Obstacles/Kill22"]
+[editable path="Obstacles/Kill23"]
+[editable path="Obstacles/Kill24"]
+[editable path="Obstacles/Kill25"]
+[editable path="Obstacles/Kill26"]
+[editable path="Obstacles/Kill27"]
+[editable path="Obstacles/Kill28"]
+[editable path="Obstacles/Kill29"]
+[editable path="Obstacles/Kill30"]
+[editable path="Obstacles/Kill31"]
+[editable path="Obstacles/Kill32"]
+[editable path="Obstacles/Kill33"]
+[editable path="Obstacles/Kill34"]
+[editable path="Obstacles/Kill35"]
+[editable path="Obstacles/Kill6"]
+[editable path="Player"]

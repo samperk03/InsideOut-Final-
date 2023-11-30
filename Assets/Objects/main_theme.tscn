@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwlily6i58pwp"]
+
+[ext_resource type="AudioStream" uid="uid://c6pg33ils1ww0" path="res://Assets/Sounds/MainTheme.wav" id="1_vdr4e"]
+[ext_resource type="Script" path="res://Levels/MainTheme.gd" id="2_y26om"]
+
+[node name="MainTheme" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_vdr4e")
+volume_db = 8.915
+autoplay = true
+panning_strength = 0.0
+script = ExtResource("2_y26om")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -25,4 +25,11 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin_Collector"]
 shape = SubResource("RectangleShape2D_lx064")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+limit_left = -1152
+limit_top = -640
+limit_right = 1152
+limit_bottom = 640
+
 [connection signal="body_entered" from="Coin_Collector" to="." method="_on_coin_collector_body_entered"]
