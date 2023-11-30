@@ -1,11 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvopj7imel2qo"]
+[gd_scene load_steps=11 format=3 uid="uid://dvopj7imel2qo"]
 
 [ext_resource type="PackedScene" uid="uid://bn802loastx2d" path="res://Assets/Objects/wall.tscn" id="1_ksefw"]
 [ext_resource type="PackedScene" uid="uid://b7i0apn6kf16y" path="res://Player/player.tscn" id="1_mtj1t"]
 [ext_resource type="Texture2D" uid="uid://datn6xcj503mj" path="res://Assets/Images/Green.jpg" id="2_0fsqk"]
+[ext_resource type="Texture2D" uid="uid://dt6nomy1o3nt5" path="res://Assets/Images/coin.png" id="2_htpf2"]
 [ext_resource type="Script" path="res://Levels/Exit.gd" id="2_niubm"]
 [ext_resource type="AudioStream" uid="uid://c6pg33ils1ww0" path="res://Assets/Sounds/MainTheme.wav" id="2_nvdo6"]
+[ext_resource type="Script" path="res://Coins.gd" id="3_2qm3q"]
 [ext_resource type="AudioStream" uid="uid://cod84jn8k80sh" path="res://Assets/Sounds/Win.wav" id="3_xkbpj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nkgdj"]
+texture = ExtResource("2_htpf2")
+texture_region_size = Vector2i(61, 61)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+
+[sub_resource type="TileSet" id="TileSet_xss5e"]
+tile_size = Vector2i(100, 100)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 4
+sources/1 = SubResource("TileSetAtlasSource_nkgdj")
 
 [node name="Game" type="Node2D"]
 
@@ -32,6 +48,11 @@ polygon = PackedVector2Array(-739, 61, -67, 61, -67, -99, -99, -99, -99, 29, -70
 position = Vector2(419, 131)
 points = PackedVector2Array(-739, 61, -67, 61, -67, -99, -99, -99, -99, 29, -707, 29, -707, -291, -99, -291, -99, -163, -67, -163, -67, -323, -739, -323, -739, 61)
 metadata/_edit_lock_ = true
+
+[node name="Coins" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_xss5e")
+format = 2
+script = ExtResource("3_2qm3q")
 
 [node name="Exit_to_1" type="Area2D" parent="."]
 script = ExtResource("2_niubm")
