@@ -1,6 +1,5 @@
-[gd_scene load_steps=19 format=3 uid="uid://ncwq3wa6d6xq"]
+[gd_scene load_steps=17 format=3 uid="uid://ncwq3wa6d6xq"]
 
-[ext_resource type="Texture2D" uid="uid://dt6nomy1o3nt5" path="res://Assets/Images/coin.png" id="1_4aql5"]
 [ext_resource type="Texture2D" uid="uid://pc4thoviej0k" path="res://Assets/Images/wall.png" id="1_4dreb"]
 [ext_resource type="PackedScene" uid="uid://cewchj7wqrct3" path="res://Assets/Objects/kill.tscn" id="2_b2qw2"]
 [ext_resource type="Texture2D" uid="uid://cglj60j1l4e44" path="res://Assets/Images/brick.png" id="2_bxgdf"]
@@ -9,24 +8,15 @@
 [ext_resource type="Script" path="res://Levels/Exit.gd" id="3_352qg"]
 [ext_resource type="Texture2D" uid="uid://datn6xcj503mj" path="res://Assets/Images/Green.jpg" id="3_fldpb"]
 [ext_resource type="Script" path="res://Player/Coins.gd" id="4_k8xxp"]
-[ext_resource type="PackedScene" uid="uid://c4d14106rpqxu" path="res://Levels/UI.tscn" id="5_dgqaw"]
+[ext_resource type="PackedScene" uid="uid://c4d14106rpqxu" path="res://Levels/Ui.tscn" id="5_dgqaw"]
 [ext_resource type="Texture2D" uid="uid://cqmhfkerb71hg" path="res://Assets/Images/Red.jpg" id="5_v8xot"]
 [ext_resource type="AudioStream" uid="uid://b7e57yh5b2g7u" path="res://Assets/Sounds/Coin.wav" id="5_vsdwx"]
 [ext_resource type="PackedScene" uid="uid://cwlily6i58pwp" path="res://Assets/Objects/main_theme.tscn" id="12_joo68"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bki5l"]
-texture = ExtResource("1_4aql5")
-texture_region_size = Vector2i(62, 62)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.5, -31, -12, -31, -16, -26, -25.5, -15.5, -31, -1, -24, 19, -14.5, 25.5, -2.5, 31, 11, 27, 25, 16, 31, -1.5, 26.5, -15, 16, -26, 0, -31)
 
 [sub_resource type="TileSet" id="TileSet_ueaft"]
 tile_size = Vector2i(62, 62)
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 4
-sources/2 = SubResource("TileSetAtlasSource_bki5l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8sb2"]
 texture = ExtResource("2_wkdnv")

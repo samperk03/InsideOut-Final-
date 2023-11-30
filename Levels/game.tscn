@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvopj7imel2qo"]
+[gd_scene load_steps=17 format=3 uid="uid://dvopj7imel2qo"]
 
 [ext_resource type="PackedScene" uid="uid://cewchj7wqrct3" path="res://Assets/Objects/kill.tscn" id="1_evipt"]
 [ext_resource type="PackedScene" uid="uid://bn802loastx2d" path="res://Assets/Objects/wall.tscn" id="1_pim0l"]
+[ext_resource type="Script" path="res://Player/Coins.gd" id="2_1n6bn"]
 [ext_resource type="Texture2D" uid="uid://dt6nomy1o3nt5" path="res://Assets/Images/coin.png" id="2_5pirt"]
 [ext_resource type="Script" path="res://Levels/Exit.gd" id="3_4wyp0"]
 [ext_resource type="Texture2D" uid="uid://datn6xcj503mj" path="res://Assets/Images/Green.jpg" id="4_lntdx"]
@@ -10,6 +11,20 @@
 [ext_resource type="AudioStream" uid="uid://cod84jn8k80sh" path="res://Assets/Sounds/Win.wav" id="7_t0pqh"]
 [ext_resource type="AudioStream" uid="uid://bdo1ayf6pe6a0" path="res://Assets/Sounds/Death.wav" id="8_ry367"]
 [ext_resource type="AudioStream" uid="uid://b7e57yh5b2g7u" path="res://Assets/Sounds/Coin.wav" id="9_q8imy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bki5l"]
+texture = ExtResource("2_5pirt")
+texture_region_size = Vector2i(62, 62)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.5, -31, -12, -31, -16, -26, -25.5, -15.5, -31, -1, -24, 19, -14.5, 25.5, -2.5, 31, 11, 27, 25, 16, 31, -1.5, 26.5, -15, 16, -26, 0, -31)
+
+[sub_resource type="TileSet" id="TileSet_k5rrh"]
+tile_size = Vector2i(62, 62)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 4
+sources/2 = SubResource("TileSetAtlasSource_bki5l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nkgdj"]
 texture = ExtResource("2_5pirt")
@@ -52,6 +67,16 @@ func get_coin(p):
 "
 
 [node name="Game" type="Node2D"]
+
+[node name="Coins2" type="TileMap" parent="."]
+scale = Vector2(0.2, 0.2)
+tile_set = SubResource("TileSet_k5rrh")
+format = 2
+layer_0/tile_data = PackedInt32Array(12517727, 2, 0, 11272498, 2, 0, 9306384, 2, 0, 8126751, 2, 0, 5570838, 2, 0, 1048809, 2, 0, 459020, 2, 0, 524635, 2, 0, 655527, 2, 0, 655513, 2, 0, 983154, 2, 0, 4259872, 2, 0, 3211273, 2, 0, 7798816, 2, 0, 6488073, 2, 0, 9502733, 2, 0, 10092593, 2, 0, 12451899, 2, 0, 9240638, 2, 0, 7471182, 2, 0, 4063306, 2, 0, 2097269, 2, 0, 5570680, 2, 0, 7798885, 2, 0, 10223734, 2, 0, 11600013, 2, 0, 9240728, 2, 0, 7602316, 2, 0, 4653217, 2, 0, 2687149, 2, 0, 3408078, 2, 0, 5701854, 2, 0, 8650978, 2, 0, 7471341, 2, 0, 10682604, 2, 0, 11600109, 2, 0, 11993269, 2, 0, 6422853, 2, 0, 2949428, 2, 0, 1376561, 2, 0, 2556170, 2, 0, 8913036, 2, 0, 2687023, 2, 0, 2752520, 2, 0, 2883587, 2, 0, 2949138, 2, 0, 851992, 2, 0, 3145768, 2, 0)
+script = ExtResource("2_1n6bn")
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="Coins2"]
+stream = ExtResource("9_q8imy")
 
 [node name="Obstacles" type="Node2D" parent="."]
 
