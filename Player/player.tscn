@@ -23,9 +23,6 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin_Collector"]
-light_mask = 8
-visibility_layer = 8
-position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_lx064")
 
 [connection signal="body_entered" from="Coin_Collector" to="." method="_on_coin_collector_body_entered"]
