@@ -7,7 +7,7 @@
 size = Vector2(60, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lx064"]
-size = Vector2(40, 34)
+size = Vector2(62, 62)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_8tj2q")
@@ -23,7 +23,6 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin_Collector"]
-position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_lx064")
 
 [connection signal="body_entered" from="Coin_Collector" to="." method="_on_coin_collector_body_entered"]
