@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Levels/Exit.gd" id="3_352qg"]
 [ext_resource type="Texture2D" uid="uid://datn6xcj503mj" path="res://Assets/Images/Green.jpg" id="3_fldpb"]
 [ext_resource type="Script" path="res://Player/Coins.gd" id="4_k8xxp"]
-[ext_resource type="PackedScene" uid="uid://c4d14106rpqxu" path="res://Levels/UI.tscn" id="5_dgqaw"]
+[ext_resource type="PackedScene" uid="uid://c4d14106rpqxu" path="res://Levels/Ui.tscn" id="5_dgqaw"]
 [ext_resource type="Texture2D" uid="uid://cqmhfkerb71hg" path="res://Assets/Images/Red.jpg" id="5_v8xot"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8sb2"]
@@ -97,8 +97,10 @@ texture = ExtResource("5_v8xot")
 position = Vector2(673, -642)
 polygon = PackedVector2Array(485, 644, 574, 649, 575, 724, 485, 722)
 
-[node name="UI" parent="Exit_to_Lost" instance=ExtResource("5_dgqaw")]
+[node name="UI" parent="." instance=ExtResource("5_dgqaw")]
 
 [connection signal="body_entered" from="Exit_to_2" to="Exit_to_2" method="_on_body_entered"]
 [connection signal="body_entered" from="Exit_to_Lost2" to="Exit_to_Lost2" method="_on_body_entered"]
 [connection signal="body_entered" from="Exit_to_Lost" to="Exit_to_Lost" method="_on_body_entered"]
+
+[editable path="UI"]
