@@ -7,7 +7,7 @@ func _on_body_entered(body):
 			var _target = get_tree().change_scene_to_file("res://Levels/Level1.tscn")
 		if name == "Exit_to_2":
 			var _target = get_tree().change_scene_to_file("res://Levels/level2.tscn")
-		if name == "Exit_to_3":
+		if name == "Exit_to_GO":
 			var _target = get_tree().change_scene_to_file("res://Levels/Game_Over.tscn")
 		if name == "Exit_to_Lost":
 			var _target = get_tree().change_scene_to_file("res://Levels/Game_Over.tscn")
