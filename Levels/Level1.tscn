@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://ncwq3wa6d6xq"]
 
-[ext_resource type="Texture2D" uid="uid://cglj60j1l4e44" path="res://Assets/Images/brick.png" id="2_bxgdf"]
+[ext_resource type="Texture2D" path="res://Assets/Images/brick.png" id="2_bxgdf"]
 [ext_resource type="PackedScene" uid="uid://b7i0apn6kf16y" path="res://Player/player.tscn" id="2_dooct"]
 [ext_resource type="Texture2D" uid="uid://ct06gao5108ch" path="res://Assets/Images/tilemap.png" id="2_wkdnv"]
 [ext_resource type="Script" path="res://Levels/Exit.gd" id="3_352qg"]
