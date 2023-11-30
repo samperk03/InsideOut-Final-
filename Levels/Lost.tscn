@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmrwrkmo0e2id"]
+
+[ext_resource type="Script" path="res://Levels/Lost.gd" id="1_t1c7w"]
+[ext_resource type="Shader" path="res://Lost.gdshader" id="2_hph57"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmy6d"]
+shader = ExtResource("2_hph57")
+shader_parameter/fireMovement = Vector2(-0.01, -0.5)
+shader_parameter/distortionMovement = Vector2(-0.01, -0.3)
+shader_parameter/normalStrength = 40.0
+shader_parameter/distortionStrength = 0.1
+
+[node name="Lost" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t1c7w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_cmy6d")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -74.0
+offset_right = 77.5
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You lost. Get better!"
+
+[node name="Play_Again" type="Button" parent="."]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 300.0
+offset_right = 675.0
+offset_bottom = 340.0
+text = "Play Again!!"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 360.0
+offset_right = 675.0
+offset_bottom = 400.0
+text = "Quit"
+
+[connection signal="pressed" from="Play_Again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

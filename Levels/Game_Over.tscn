@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbyt7s8ctxjxs"]
+[gd_scene load_steps=4 format=3 uid="uid://dbyt7s8ctxjxs"]
 
 [ext_resource type="Script" path="res://Levels/Game_Over.gd" id="1_b6p4i"]
+[ext_resource type="Shader" path="res://Levels/Game_Over.gdshader" id="2_kncyj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ts2cp"]
+shader = ExtResource("2_kncyj")
+shader_parameter/TWOPI = 6.28319
+shader_parameter/NUM_EXPLOSIONS = 8.0
+shader_parameter/NUM_PARTICLES = 70.0
+shader_parameter/MOD3 = Vector3(0.1031, 0.11369, 0.13787)
 
 [node name="Game_Over" type="Control"]
 layout_mode = 3
@@ -12,6 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_b6p4i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ts2cp")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
