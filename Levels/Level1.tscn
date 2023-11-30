@@ -50,29 +50,29 @@ texture = ExtResource("3_fldpb")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_to_2"]
 polygon = PackedVector2Array(-19, 107, -2, 107, -1, 133, -19, 133)
 
-[node name="Exit_to_GO" type="Area2D" parent="."]
+[node name="Exit_to_Lost2" type="Area2D" parent="."]
 script = ExtResource("3_352qg")
 
-[node name="Sprite2D" type="Sprite2D" parent="Exit_to_GO"]
+[node name="Sprite2D" type="Sprite2D" parent="Exit_to_Lost2"]
 position = Vector2(531, 687)
 scale = Vector2(0.0140769, 0.0171111)
 texture = ExtResource("5_v8xot")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_to_GO"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_to_Lost2"]
 polygon = PackedVector2Array(479, 647, 574, 649, 575, 724, 485, 722)
 
-[node name="Exit_to_GO2" type="Area2D" parent="."]
+[node name="Exit_to_Lost" type="Area2D" parent="."]
 script = ExtResource("3_352qg")
 
-[node name="Sprite2D" type="Sprite2D" parent="Exit_to_GO2"]
+[node name="Sprite2D" type="Sprite2D" parent="Exit_to_Lost"]
 position = Vector2(531, 687)
 scale = Vector2(0.0140769, 0.0171111)
 texture = ExtResource("5_v8xot")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_to_GO2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_to_Lost"]
 position = Vector2(673, -642)
 polygon = PackedVector2Array(485, 644, 574, 649, 575, 724, 485, 722)
 
 [connection signal="body_entered" from="Exit_to_2" to="Exit_to_2" method="_on_body_entered"]
-[connection signal="body_entered" from="Exit_to_GO" to="Exit_to_GO" method="_on_body_entered"]
-[connection signal="body_entered" from="Exit_to_GO2" to="Exit_to_GO2" method="_on_body_entered"]
+[connection signal="body_entered" from="Exit_to_Lost2" to="Exit_to_Lost2" method="_on_body_entered"]
+[connection signal="body_entered" from="Exit_to_Lost" to="Exit_to_Lost" method="_on_body_entered"]
