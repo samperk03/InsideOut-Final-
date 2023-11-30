@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmk1drtq3epf6"]
+[gd_scene load_steps=9 format=3 uid="uid://dmk1drtq3epf6"]
 
 [ext_resource type="PackedScene" uid="uid://b7i0apn6kf16y" path="res://Player/player.tscn" id="1_un4uy"]
 [ext_resource type="Texture2D" uid="uid://ct06gao5108ch" path="res://Assets/Images/tilemap.png" id="2_gvlh6"]
 [ext_resource type="Script" path="res://Levels/Exit.gd" id="3_ah57l"]
 [ext_resource type="Texture2D" uid="uid://cqmhfkerb71hg" path="res://Assets/Images/Red.jpg" id="4_xequr"]
 [ext_resource type="Texture2D" uid="uid://datn6xcj503mj" path="res://Assets/Images/Green.jpg" id="5_jcomb"]
+[ext_resource type="PackedScene" uid="uid://c4d14106rpqxu" path="res://Levels/Ui.tscn" id="6_wsa4g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66l1j"]
 texture = ExtResource("2_gvlh6")
@@ -97,6 +98,8 @@ texture = ExtResource("5_jcomb")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_to_GO"]
 polygon = PackedVector2Array(837, 662, 1065, 664, 1066, 805, 837, 804)
+
+[node name="UI" parent="." instance=ExtResource("6_wsa4g")]
 
 [connection signal="body_entered" from="Exit_to_Lost" to="Exit_to_Lost" method="_on_body_entered"]
 [connection signal="body_entered" from="Exit_to_Lost2" to="Exit_to_Lost2" method="_on_body_entered"]
