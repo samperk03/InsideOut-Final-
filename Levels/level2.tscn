@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cqmhfkerb71hg" path="res://Assets/Images/Red.jpg" id="4_xequr"]
 [ext_resource type="AudioStream" uid="uid://b7e57yh5b2g7u" path="res://Assets/Sounds/Coin.wav" id="5_4ao7b"]
 [ext_resource type="Texture2D" uid="uid://datn6xcj503mj" path="res://Assets/Images/Green.jpg" id="5_jcomb"]
-[ext_resource type="PackedScene" uid="uid://c4d14106rpqxu" path="res://Levels/Ui.tscn" id="6_wsa4g"]
+[ext_resource type="PackedScene" uid="uid://c4d14106rpqxu" path="res://Levels/UI.tscn" id="6_wsa4g"]
 [ext_resource type="PackedScene" uid="uid://cwlily6i58pwp" path="res://Assets/Objects/main_theme.tscn" id="10_1drl1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66l1j"]

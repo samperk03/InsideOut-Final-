@@ -35,7 +35,7 @@ Adding more levels
 Adding particle effects 
 
 # Created by: Group Name
-Joshua Tlung 
+Joshua Tlung: Player Sprite, Coin Sprite, Kill Obstacle
 
 Greyson Schenck
 
