@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dt6nomy1o3nt5" path="res://Assets/Images/coin.png" id="1_4aql5"]
 [ext_resource type="Script" path="res://Levels/Coins.gd" id="2_1jeay"]
-[ext_resource type="Texture2D" path="res://Assets/Images/brick.png" id="2_bxgdf"]
+[ext_resource type="Texture2D" uid="uid://cglj60j1l4e44" path="res://Assets/Images/brick.png" id="2_bxgdf"]
 [ext_resource type="PackedScene" uid="uid://b7i0apn6kf16y" path="res://Player/player.tscn" id="2_dooct"]
 [ext_resource type="Texture2D" uid="uid://ct06gao5108ch" path="res://Assets/Images/tilemap.png" id="2_wkdnv"]
 [ext_resource type="Script" path="res://Levels/Exit.gd" id="3_352qg"]
@@ -41,7 +41,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n8sb2")
 sources/1 = SubResource("TileSetAtlasSource_oc04c")
 
-[node name="Level1" type="Node2D"]
+[node name="Game" type="Node2D"]
 
 [node name="Map" type="Node2D" parent="."]
 
